@@ -28,4 +28,5 @@ export interface Props {
 
 export interface MessageProps {
   log: Message
+  theme: any
 }

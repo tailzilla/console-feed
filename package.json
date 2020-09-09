@@ -1,5 +1,5 @@
 {
-  "name": "console-feed",
+  "name": "tailzilla-console-feed",
   "version": "3.0.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -8,7 +8,7 @@
     "build": "tsc -p ./tsconfig.build.json --declaration && for file in src/**/*.d.ts; do cp $file ${file/src/lib}; done",
     "clean": "nwb clean-module && nwb clean-demo",
     "start": "nwb serve-react-demo",
-    "release": "yarn test && yarn clean && yarn build && yarn publish && yarn clean",
+    "release": "yarn clean && yarn build && npm publish --access=public && yarn clean",
     "precommit": "pretty-quick --staged",
     "test": "jest --verbose",
     "test:coverage": "jest --coverage",

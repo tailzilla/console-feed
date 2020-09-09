@@ -34,6 +34,8 @@ class Console extends React.PureComponent<Props, any> {
   render() {
     let { filter = [], logs = [], searchKeywords, logFilter } = this.props
 
+    const theme = this.theme()
+
     const regex = new RegExp(searchKeywords)
 
     const filterFun = logFilter
@@ -44,7 +46,7 @@ class Console extends React.PureComponent<Props, any> {
     logs = logs.filter(filterFun)
 
     return (
-      <ThemeProvider theme={this.theme}>
+      <ThemeProvider theme={theme}>
         <Root>
           {logs.map((log, i) => {
             // If the filter is defined and doesn't include the method
